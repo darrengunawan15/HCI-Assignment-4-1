@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Human Computer Interaction</title>
+  <link rel="shortcut icon" href="./assets/img/icon.png" type="image/x-icon">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+
+<body class="bg-gray-900">
+  <!-- Navbar -->
+  <nav class="bg-gray-900 fixed w-full">
+    <div class="max-w-screen-full flex flex-wrap justify-between items-center mx-2 py-2 pl-2">
+      <img src="./assets/img/bunny.png" alt="Snowball" class="w-10">
+      <button data-collapse-toggle="navbar-default" type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg md:hidden hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600"
+        aria-controls="navbar-default" aria-expanded="false">
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15" />
+        </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto mr-6" id="navbar-default">
+        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-700 rounded-lg bg-gray-800 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-gray-900">
+          <li>
+            <a href="./index.html"
+              class="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:p-0 md:hover:text-blue-500 md:hover:bg-transparent">Home</a>
+          </li>
+          <li>
+            <a href="./about.html"
+              class="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:p-0 md:hover:text-blue-500 md:hover:bg-transparent">About</a>
+          </li>
+          <li>
+            <a href="./skills.html"
+              class="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:p-0 md:hover:text-blue-500 md:hover:bg-transparent">Skills</a>
+          </li>
+          <li>
+            <a href="./portfolio.html"
+              class="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:p-0 md:hover:text-blue-500 md:hover:bg-transparent">Portfolio</a>
+          </li>
+          <li>
+            <a href="./contact.html"
+              class="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:p-0 md:hover:text-blue-500 md:hover:bg-transparent">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <div class="flex flex-col items-center">
+    <div class="w-full px-4 lg:w-3/4">
+      <form id="contactForm" action="">
+        <h1 class="my-8 font-semibold text-2xl text-center">Contact Us</h1>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="mb-6">
+            <label for="fname" class="block mb-2 text-sm font-medium text-white">First Name <span
+                class="text-red-400">*</span></label>
+            <input type="text" id="fname"
+              class="shadow-sm-light bg-gray-700 border border-gray-600 text-white placeholder-gray-400 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              placeholder="First Name" required>
+          </div>
+          <div class="mb-6">
+            <label for="lname" class="block mb-2 text-sm font-medium text-white">Last Name <span
+                class="text-red-400">*</span></label>
+            <input type="text" id="lname"
+              class="shadow-sm-light bg-gray-700 border border-gray-600 text-white placeholder-gray-400 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+              placeholder="Last Name" required>
+          </div>
+        </div>
+
+
+        <div class="mb-6">
+          <label for="email" class="block mb-2 text-sm font-medium text-white">Your email <span
+              class="text-red-400">*</span></label>
+          <input type="email" id="email"
+            class="shadow-sm-light bg-gray-700 border border-gray-600 text-white placeholder-gray-400 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            placeholder="example@gmail.com" required>
+        </div>
+        <div class="mb-6">
+          <label for="phone" class="block mb-2 text-sm font-medium text-white">Your phone number <span
+              class="text-red-400">*</span></label>
+          <input type="text" id="phone"
+            class="shadow-sm-light bg-gray-700 border border-gray-600 text-white placeholder-gray-400 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            placeholder="Phone Number" required>
+        </div>
+        <label for="message" class="block mb-2 text-sm font-medium text-white">Message <span
+            class="text-red-400">*</span></label>
+        <textarea id="message" rows="4"
+          class="block p-2.5 w-full text-sm text-white bg-gray-700 rounded-lg border border-gray-600 focus:ring-blue-500 focus:border-blue-500 placeholder-gray-400"
+          placeholder="Tell us what we can help you with"></textarea>
+        <div class="flex items-center my-4">
+          <input id="checkbox" type="checkbox" value=""
+            class="w-4 h-4 text-blue-600 bg-gray-700 border-gray-600 rounded focus:ring-blue-600 ring-offset-gray-800 focus:ring-offset-gray-800 focus:ring-2">
+          <label for="checkbox-1" class="ms-2 text-sm font-medium text-gray-300">I'd like
+            to receive more information about jQuery, I understand and agree to the
+            <a href="#" class="text-blue-500 hover:underline" data-modal-target="default-modal" data-modal-toggle="default-modal">Privacy Policy</a></label>
+        </div>
+
+        <!-- modal -->
+        <div id="default-modal" tabindex="-1" aria-hidden="true"
+          class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+          <div class="relative p-4 w-full max-w-2xl max-h-full">
+            <div class="relative bg-gray-700 rounded-lg shadow">
+              <!-- Modal header -->
+              <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-600">
+                <h3 class="text-xl font-semibold text-white">
+                  Privacy Policy
+                </h3>
+                <button type="button"
+                  class="text-gray-400 bg-transparent hover:bg-gray-600 hover:text-white rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                  data-modal-hide="default-modal">
+                  <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 14 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                  </svg>
+                  <span class="sr-only">Close modal</span>
+                </button>
+              </div>
+              <!-- Modal body -->
+              <div class="p-4 md:p-5 space-y-4">
+                <p class="text-base leading-relaxed text-gray-400">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia quis quisquam corporis molestiae assumenda non nesciunt eaque dolor consequatur harum ipsam cum, obcaecati repellendus sequi, magnam deserunt similique velit rem.
+                </p>
+                <p class="text-base leading-relaxed text-gray-400">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim adipisci tempore quia cumque explicabo iure consequatur quod! Dolorum quod rerum dolorem sequi consequatur exercitationem, odit aperiam fuga explicabo ducimus perferendis.
+                </p>
+              </div>
+              <!-- Modal footer -->
+              <div class="flex items-center p-4 md:p-5 border-t border-gray-600 rounded-b">
+                <button data-modal-hide="default-modal" type="button"
+                  class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">I
+                  accept</button>
+                <button data-modal-hide="default-modal" type="button"
+                  class="ms-3 text-gray-300 bg-gray-700 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-600 rounded-lg border border-gray-500 text-sm font-medium px-5 py-2.5 hover:text-white focus:z-10">Decline</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="#" id="submitBtn"
+          class="block my-8 h-auto w-auto px-4 py-3 text-sm font-medium text-center text-white bg-blue-600 rounded-lg hover:bg-blue-700">
+          Submit Form
+        </a>
+      </form>
+    </div>
+  </div>
+
+  <div class="flex flex-col h-screen items-center justify-evenly md:flex-row">
+    <div class="flex flex-col text-white items-center bg-gray-600 p-6 rounded w-48 h-40 justify-center border"
+      style="box-shadow: 0px 0px 10px gold;">
+      <img src="https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-instagram-icon-png-image_6315974.png"
+        alt="Instagram Logo" class="w-24">
+      <p>@darren_gunawan15</p>
+    </div>
+
+    <div class="flex flex-col text-white items-center bg-gray-600 p-6 rounded w-48 h-40 justify-center border"
+      style="box-shadow: 0px 0px 10px gold;">
+      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="Github Logo" class="w-24">
+      <p>darrengunawan15</p>
+    </div>
+
+    <div class="flex flex-col text-white items-center bg-gray-600 p-6 rounded w-48 h-40 justify-center border"
+      style="box-shadow: 0px 0px 10px gold;">
+      <img
+        src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png"
+        alt="Discord Logo" class="w-24 mb-4">
+      <p>dreamsdagger</p>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script>
+  <script>
+    $('body').css({
+      'font-family': 'Arial, Helvetica, sans-serif',
+    });
+
+    $(document).ready(function () {
+      $(".error").remove();
+
+      // Name validation on input or change
+      $("#fname, #lname").on("input", function () {
+        var name = $(this).val();
+        if ($.trim(name) === "") {
+          showError($(this), 'This field is required');
+        } else {
+          hideError($(this));
+        }
+      });
+
+      // Email validation on input or change
+      $("#email").on("input", function () {
+        var email = $(this).val();
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          showError($(this), 'Enter a valid email address');
+        } else {
+          hideError($(this));
+        }
+      });
+
+      // Phone number validation on input or change
+      $("#phone").on("input", function () {
+        var phone = $(this).val();
+        var phoneRegex = /^[0-9]+$/;
+        if (!phoneRegex.test(phone) || phone.length < 10 || phone.length > 12 || phone.charAt(1) === '0') {
+          showError($(this), 'Enter a valid phone number (numeric characters only, starting with 0, length between 10 and 12)');
+        } else {
+          hideError($(this));
+        }
+      });
+
+      // Message box validation on input or change
+      $("#message").on("input", function () {
+        var message = $(this).val();
+        if ($.trim(message) === "") {
+          showError($(this), 'This field is required');
+        } else {
+          hideError($(this));
+        }
+      });
+
+      $("#submitBtn").click(function () {
+        $(".error").remove();
+
+        var isValid = true;
+
+        // Name validation
+        $("#fname, #lname").each(function () {
+          var name = $(this).val();
+          if ($.trim(name) === "") {
+            showError($(this), 'This field is required');
+            isValid = false;
+          }
+        });
+
+        // Email validation
+        var email = $("#email").val();
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          showError($("#email"), 'Enter a valid email address');
+          isValid = false;
+        }
+
+        // Phone number validation
+        var phone = $("#phone").val();
+        var phoneRegex = /^[0-9]+$/;
+        if (!phoneRegex.test(phone) || phone.length < 10 || phone.length > 12 || phone.charAt(1) === '0') {
+          showError($("#phone"), 'Enter a valid phone number (numeric characters only, starting with 0 and length between 10 and 12)');
+          isValid = false;
+        }
+
+        // Message box validation (just remove this if the message box's purpose to give suggestion which can be left empty)
+        var message = $("#message").val();
+        if ($.trim(message) === "") {
+          showError($("#message"), 'This field is required');
+          isValid = false;
+        }
+
+        // If all validations pass, submit the form
+        if (isValid) {
+          $("#contactForm").submit();
+          alert("Form submitted!!!");
+          $("#contactForm input, #contactForm textarea").val('');
+        }
+      });
+
+      function showError(element, message) {
+        hideError(element);
+        element.after('<span class="error text-red-400">' + message + '</span>');
+      }
+
+      function hideError(element) {
+        element.next(".error").remove();
+      }
+    });
+  </script>
+</body>
+
+</html>
